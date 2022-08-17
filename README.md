@@ -3,7 +3,7 @@
 ## Hello world in CPP
 
 ```c++
-
+// This brings in the iostream library
 #include <iostream>
 
 int main()
@@ -13,3 +13,12 @@ int main()
 }
 
 ```
+
+## Comments
+
+It's similar like JavaScript
+
+- `//` Comments out a single line
+- `/*..*/` Block Comments out a block of text
+- `/*..*/` Block comments can't be nested
+- Use comments to document your code.Don't overdo it though.
