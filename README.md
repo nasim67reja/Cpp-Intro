@@ -76,7 +76,10 @@ All C++ variables must be identified with unique names. These unique names are c
 
 When you do not want others (or yourself) to override existing variable values, use the const
 keyword (this will declare the variable as "constant", which means unchangeable and read-only):
+
 `const int myNum = 15; // myNum will always be 15`
+
+You should always declare the variable as constant when you have values that are unlikely to change:
 
 ### Defining Function
 
