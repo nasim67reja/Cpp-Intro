@@ -121,6 +121,29 @@ A string variable contains a collection of characters surrounded by double quote
 concatination - Type coercion doesn't work here
 see actual code for better understanding
 
+### C++ Array
+
+To get the size of an array, you can use the **sizeof()** operator:
+
+```C++
+int myNumbers[5] = {10, 20, 30, 40, 50};
+cout << sizeof(myNumbers); //Result 20
+```
+
+Why did the result show 20 instead of 5, when the array contains 5 elements?
+
+It is because the sizeof() operator returns the size of a type in bytes.
+
+You learned from the Data Types chapter that an int type is usually 4 bytes, so from the example above, 4 x 5 (4 bytes x 5 elements) = 20 bytes.
+
+To find out how many elements an array has, you have to divide the size of the array by the size of the data type it contains:
+
+```C++
+int myNumbers[5] = {10, 20, 30, 40, 50};
+int getArrayLength = sizeof(myNumbers) / sizeof(int);
+cout << getArrayLength;
+```
+
 ### Defining Function
 
 - C++ Function is like JavaScript's traditional function except the declaring data type

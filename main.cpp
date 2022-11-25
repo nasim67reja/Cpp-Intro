@@ -65,30 +65,70 @@ using namespace std;
 
 // 👉👉👉 loop, if..else
 
+// int main()
+// {
+//     int myAge = 0;
+//     if (myAge || false)
+//     {
+//         cout << "You are a Voter !" << endl;
+//     }
+//     else
+//     {
+//         cout << "You are not a Voter !" << endl;
+//     }
+
+//     //  for loop
+
+//     for (int i = 1; i <= 2; ++i)
+//     {
+//         cout << "Outer: " << i << "\n"; // Executes 2 times
+
+//         // Inner loop
+//         for (int j = 1; j <= 3; ++j)
+//         {
+//             cout << " Inner: " << j << "\n"; // Executes 6 times (2 * 3)
+//         }
+//     }
+
+//     return 0;
+// }
+
+//  👉👉👉👉 C++ Arrays
+
 int main()
 {
-    int myAge = 0;
-    if (myAge || false)
+    string carsF[3] = {"Tesla", "Lambo", "Roles Royals"};
+    // int myNum[3] = {10, 20, 30}; // array of integars
+    carsF[1] = "Lamborgini";
+    // cout << cars[1] << endl;
+    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+    // for (
+    //     int i = 0;
+    //     i < 4;
+    //     i++)
+    // {
+    //     cout << cars[i]
+    //          << "\n";
+    // }
+    // // Alternatives
+    // for (string i : cars)
+    // {
+    //     cout << i << endl;
+    // }
+
+    // cout << sizeof(cars) / sizeof(string);
+
+    // // Alternatives
+    for (int i = 0; i < sizeof(cars) / sizeof(string); i++)
     {
-        cout << "You are a Voter !" << endl;
-    }
-    else
-    {
-        cout << "You are not a Voter !" << endl;
+        cout << cars[i] << endl;
     }
 
-    //  for loop
+    // ////// 🖐🖐🖐🖐🖐 Multidimensional Array
 
-    for (int i = 1; i <= 2; ++i)
-    {
-        cout << "Outer: " << i << "\n"; // Executes 2 times
-
-        // Inner loop
-        for (int j = 1; j <= 3; ++j)
-        {
-            cout << " Inner: " << j << "\n"; // Executes 6 times (2 * 3)
-        }
-    }
+    string letters[2][4] = {
+        {"A", "B", "C", "D"},
+        {"E", "F", "G", "H"}};
 
     return 0;
 }
