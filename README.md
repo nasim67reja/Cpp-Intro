@@ -81,6 +81,43 @@ keyword (this will declare the variable as "constant", which means unchangeable 
 
 You should always declare the variable as constant when you have values that are unlikely to change:
 
+### C++ User Input
+
+You have already learned that cout is used to output (print) values. Now we will use cin to get user input.
+
+cin is a predefined variable that reads data from the keyboard with the extraction operator (>>).
+
+```C++
+#include <iostream>
+
+int main()
+{
+    int yourAge;
+    std::cout << "Type your age :" << std::endl;
+    std::cin >> yourAge;
+    std::cout << "Your birth year is : " << 2022 - yourAge;
+    return 0;
+}
+
+```
+
+**Good To Know**
+cout is pronounced "see-out". Used for output, and uses the insertion operator (<<)
+
+cin is pronounced "see-in". Used for input, and uses the extraction operator (>>)
+
+### C++ Strings
+
+Strings are used for storing text.
+
+A string variable contains a collection of characters surrounded by double quotes:
+
+`string greeting = "Hello";`
+
+**To use strings, you must include an additional header file in the source code, the <string> library:**
+
+`#include <string>`
+
 ### Defining Function
 
 - C++ Function is like JavaScript's traditional function except the declaring data type
