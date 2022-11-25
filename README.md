@@ -118,6 +118,9 @@ A string variable contains a collection of characters surrounded by double quote
 
 `#include <string>`
 
+concatination - Type coercion doesn't work here
+see actual code for better understanding
+
 ### Defining Function
 
 - C++ Function is like JavaScript's traditional function except the declaring data type
