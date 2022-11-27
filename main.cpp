@@ -95,40 +95,91 @@ using namespace std;
 
 //  👉👉👉👉 C++ Arrays
 
-int main()
-{
-    string carsF[3] = {"Tesla", "Lambo", "Roles Royals"};
-    // int myNum[3] = {10, 20, 30}; // array of integars
-    carsF[1] = "Lamborgini";
-    // cout << cars[1] << endl;
-    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
-    // for (
-    //     int i = 0;
-    //     i < 4;
-    //     i++)
-    // {
-    //     cout << cars[i]
-    //          << "\n";
-    // }
-    // // Alternatives
-    // for (string i : cars)
-    // {
-    //     cout << i << endl;
-    // }
+// int main()
+// {
+//     string carsF[3] = {"Tesla", "Lambo", "Roles Royals"};
+//     // int myNum[3] = {10, 20, 30}; // array of integars
+//     carsF[1] = "Lamborgini";
+//     // cout << cars[1] << endl;
+//     string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+//     // for (
+//     //     int i = 0;
+//     //     i < 4;
+//     //     i++)
+//     // {
+//     //     cout << cars[i]
+//     //          << "\n";
+//     // }
+//     // // Alternatives
+//     // for (string i : cars)
+//     // {
+//     //     cout << i << endl;
+//     // }
 
-    // cout << sizeof(cars) / sizeof(string);
+//     // cout << sizeof(cars) / sizeof(string);
 
-    // // Alternatives
-    for (int i = 0; i < sizeof(cars) / sizeof(string); i++)
+//     // // Alternatives
+//     // for (int i = 0; i < sizeof(cars) / sizeof(string); i++)
+//     // {
+//     //     cout << cars[i] << endl;
+//     // }
+
+//     // ////// 🖐🖐🖐🖐🖐 Multidimensional Array
+//     int number = 2;
+//     string letters[2][4] = {
+//         {"A", "B", "C", "D"},
+//         {"E", "F", "G", "H"}};
+//     string lettersA[2][3][2] = {
+//         {{"a", "b"}, {"c", "d"}, {"e", "f"}},
+//         {{"g", "h"}, {"i", "j"}, {"k", "l"}}};
+//     lettersA[0][0][1] = "B"; // changing element in multi-Dimensional array
+//                              // cout << lettersA[0][0][1] << endl;
+//                              // Looping in multidimensional array
+//     // for (int i = 0; i < 2; i++)
+//     // {
+//     //     for (int j = 0; j < 3; j++)
+//     //     {
+//     //         for (int k = 0; k < 2; k++)
+//     //         {
+//     //             cout << lettersA[i][j][k] << endl;
+//     //         }
+//     //     }
+//     // }
+
+  
+//     return 0;
+// }
+
+int main(){
+    // /////////////// In the following example we use a multi-dimensional array to represent a small game of Battleship:
+    bool ships[4][4] = {
+        {0, 1, 1, 0},
+        {0, 0, 0, 0},
+        {0, 0, 1, 0},
+        {0, 0, 1, 0}};
+    int hits = 0;
+    int numberOfTurns = 0;
+    while (hits < 4)
     {
-        cout << cars[i] << endl;
+        int row, column;
+        cout << "Give the row number :" << endl;
+        cin >> row;
+        cout << "Give the column number :" << endl;
+        cin >> column;
+        if (ships[row][column])
+        {
+            ships[row][column] = 0;
+            hits++;
+            cout << "Hit ! " << (4 - hits) << " left" << endl;
+        }
+        else
+        {
+            cout << "oops Missed try again" << endl;
+        }
+
+        numberOfTurns++;
     }
-
-    // ////// 🖐🖐🖐🖐🖐 Multidimensional Array
-
-    string letters[2][4] = {
-        {"A", "B", "C", "D"},
-        {"E", "F", "G", "H"}};
-
+    cout << "Victory ✌" << endl;
+    cout << "You have tried " << numberOfTurns << " times" << endl;
     return 0;
 }
