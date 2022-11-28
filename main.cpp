@@ -146,40 +146,60 @@ using namespace std;
 //     //     }
 //     // }
 
-  
 //     return 0;
 // }
 
-int main(){
-    // /////////////// In the following example we use a multi-dimensional array to represent a small game of Battleship:
-    bool ships[4][4] = {
-        {0, 1, 1, 0},
-        {0, 0, 0, 0},
-        {0, 0, 1, 0},
-        {0, 0, 1, 0}};
-    int hits = 0;
-    int numberOfTurns = 0;
-    while (hits < 4)
-    {
-        int row, column;
-        cout << "Give the row number :" << endl;
-        cin >> row;
-        cout << "Give the column number :" << endl;
-        cin >> column;
-        if (ships[row][column])
-        {
-            ships[row][column] = 0;
-            hits++;
-            cout << "Hit ! " << (4 - hits) << " left" << endl;
-        }
-        else
-        {
-            cout << "oops Missed try again" << endl;
-        }
+// int main(){
+//     // /////////////// In the following example we use a multi-dimensional array to represent a small game of Battleship:
+//     bool ships[4][4] = {
+//         {0, 1, 1, 0},
+//         {0, 0, 0, 0},
+//         {0, 0, 1, 0},
+//         {0, 0, 1, 0}};
+//     int hits = 0;
+//     int numberOfTurns = 0;
+//     while (hits < 4)
+//     {
+//         int row, column;
+//         cout << "Give the row number :" << endl;
+//         cin >> row;
+//         cout << "Give the column number :" << endl;
+//         cin >> column;
+//         if (ships[row][column])
+//         {
+//             ships[row][column] = 0;
+//             hits++;
+//             cout << "Hit ! " << (4 - hits) << " left" << endl;
+//         }
+//         else
+//         {
+//             cout << "oops Missed try again" << endl;
+//         }
 
-        numberOfTurns++;
-    }
-    cout << "Victory ✌" << endl;
-    cout << "You have tried " << numberOfTurns << " times" << endl;
+//         numberOfTurns++;
+//     }
+//     cout << "Victory ✌" << endl;
+//     cout << "You have tried " << numberOfTurns << " times" << endl;
+//     return 0;
+// }
+// //////////////// 👉👉👉👉👉👉 C++ Structures
+int main()
+{
+    // rule To create a structure, use the struct keyword and declare each of its members inside curly braces.
+
+    // After the declaration, specify the name of the structure variable(myStructure in the example below) :
+
+    struct
+    {
+        int myNum = 2;
+        string myString;
+    } myStructure;
+    // Access Structure Members
+    // To access members of a structure, use the dot syntax (.):
+    //  Assign values to members of myStructure
+    // myStructure.myNum = 1;
+    myStructure.myString = "Hello World!";
+    cout << myStructure.myNum << endl;
+
     return 0;
 }
