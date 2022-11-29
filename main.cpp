@@ -183,23 +183,75 @@ using namespace std;
 //     return 0;
 // }
 // //////////////// 👉👉👉👉👉👉 C++ Structures
-int main()
-{
-    // rule To create a structure, use the struct keyword and declare each of its members inside curly braces.
+// int main()
+// {
+//     // rule To create a structure, use the struct keyword and declare each of its members inside curly braces.
 
-    // After the declaration, specify the name of the structure variable(myStructure in the example below) :
+//     // After the declaration, specify the name of the structure variable(myStructure in the example below) :
 
-    struct
-    {
-        int myNum = 2;
-        string myString;
-    } myStructure;
-    // Access Structure Members
-    // To access members of a structure, use the dot syntax (.):
-    //  Assign values to members of myStructure
-    // myStructure.myNum = 1;
-    myStructure.myString = "Hello World!";
-    cout << myStructure.myNum << endl;
+//     struct
+//     {
+//         int myNum = 2;
+//         string myString;
+//     } myStructure;
+//     // Access Structure Members
+//     // To access members of a structure, use the dot syntax (.):
+//     //  Assign values to members of myStructure
+//     // myStructure.myNum = 1;
+//     myStructure.myString = "Hello World!";
+//     cout << myStructure.myNum << endl;
+//     // cout << myStructure.myString << endl;
 
-    return 0;
-}
+//     ///👉👉👉 One Structure in Multiple Variables
+//     // struct
+//     // {
+//     //     string name;
+//     //     int cls;
+//     //     int age;
+//     //     string section;
+//     // } student1, student2;
+
+//     // student1.name = "Nasim";
+//     // student2.name = "Rohan";
+
+//     // student1.cls = 10;
+//     // student2.cls = 10;
+
+//     // student1.age = 16;
+//     // student2.age = 16;
+
+//     // student1.section = "Science";
+//     // student2.section = "Science";
+
+//     // cout << "The first student is " << student1.name << " and " << student1.name << " reads in class " << student1.cls << " his age is " << student1.age << "and he is in" << student1.section << " section" << endl;
+
+//     // cout << "The second student is " << student2.name << " and " << student2.name << " reads in class " << student2.cls << " his age is " << student2.age << " and he is in" << student2.section << " section" << endl;
+
+//     /////////////////////👇👇👇👇👇 Named Structures
+
+//     struct student
+//     {
+//         string name;
+//         int cls;
+//         int age;
+//         string section;
+//     };
+
+//     student student1;
+//     student1.name = "Nasim";
+//     student1.cls = 10;
+//     student1.age = 16;
+//     student1.section = "Science";
+
+//     student student2;
+//     student2.name = "Rohan";
+//     student2.cls = 10;
+//     student2.age = 16;
+//     student2.section = "Science";
+
+//     cout << "The first student is " << student1.name << " and " << student1.name << " reads in class " << student1.cls << " his age is " << student1.age << " and he is in" << student1.section << " section" << endl;
+
+//     cout << "The second student is " << student2.name << " and " << student2.name << " reads in class " << student2.cls << " his age is " << student2.age << " and he is in" << student2.section << " section" << endl;
+
+//     return 0;
+// }
