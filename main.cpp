@@ -255,3 +255,15 @@ using namespace std;
 
 //     return 0;
 // }
+
+// C++ References
+
+int main()
+{
+    string sscResult = "GPA-5.00";
+    string &hscResult = sscResult;
+    cout << hscResult << endl;
+    // for get memory address
+    cout << &hscResult << endl;
+    return 0;
+}
