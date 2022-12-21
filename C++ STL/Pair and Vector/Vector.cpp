@@ -195,7 +195,7 @@ void vector_T()
 int main()
 {
     vector<int> arr;
-    int n, val, a, b, c;
+    int n, val, posiRemove, start, end;
     cin >> n;
 
     for (int i = 0; i < n; i++)
@@ -203,14 +203,14 @@ int main()
         cin >> val;
         arr.push_back(val);
     }
-    cin >> a >> b >> c;
-    arr.erase(arr.begin() + --a);
-    arr.erase(arr.begin() + --b, arr.begin() + --c);
+
+    cin >> posiRemove >> start >> end;
+    arr.erase(arr.begin() + (posiRemove - 1));
+    arr.erase(arr.begin() + --start, arr.begin() + --end);
 
     cout << arr.size() << endl;
-    for (int i : arr)
-    {
-        cout << i << " ";
-    }
+
+    for (int i = 0; i < arr.size(); i++)
+        cout << arr[i] << " ";
     return 0;
 }

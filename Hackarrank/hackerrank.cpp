@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 /////// Problem 1 : C++ data type  (https://www.hackerrank.com/challenges/c-tutorial-basic-data-types/problem?isFullScreen=true)
@@ -186,15 +190,86 @@ int max_of_four(int num1, int num2, int num3, int num4)
     return max;
 }
 
+// int main()
+// {
+//     int a, b, c, d;
+//     cout << "Write the numbers :" << endl;
+//     cin >> a;
+//     cin >> b;
+//     cin >> c;
+//     cin >> d;
+//     int ans = max_of_four(a, b, c, d);
+//     cout << "The large number is " << ans << endl;
+//     return 0;
+// }
+
+//  Problem :8
+
+// HackerRank Vector Problem
+
+// int main()
+// {
+//     vector<int> arr;
+//     int n, val, posiRemove, start, end;
+//     cin >> n;
+
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> val;
+//         arr.push_back(val);
+//     }
+
+//     cin >> posiRemove >> start >> end;
+//     arr.erase(arr.begin() + (posiRemove - 1));
+//     arr.erase(arr.begin() + --start, arr.begin() + --end);
+
+//     cout << arr.size() << endl;
+
+//     for (int i = 0; i < arr.size(); i++)
+//         cout << arr[i] << " ";
+//     return 0;
+// }
+
+//  Problem :9
+// Array
+
+// int main()
+// {
+//     int n, val;
+//     cin >> n;
+//     int arr[n];
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> val;
+//         arr[i] = val;
+//     }
+
+//     int max = sizeof(arr) / sizeof(int);
+//     for (int i = max - 1; i >= 0; i--)
+//     {
+//         cout << arr[i] << ' ';
+//     }
+
+//     return 0;
+// }
+
+//  Problem :10
+// Sorting Vector
+
 int main()
 {
-    int a, b, c, d;
-    cout << "Write the numbers :" << endl;
-    cin >> a;
-    cin >> b;
-    cin >> c;
-    cin >> d;
-    int ans = max_of_four(a, b, c, d);
-    cout << "The large number is " << ans << endl;
+    vector<int> num;
+    int n, val;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> val;
+        num.push_back(val);
+    }
+    sort(num.begin(), num.end());
+
+    for (int i : num)
+        cout << i << " ";
+
     return 0;
 }
