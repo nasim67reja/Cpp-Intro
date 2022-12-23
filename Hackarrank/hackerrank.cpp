@@ -256,20 +256,89 @@ int max_of_four(int num1, int num2, int num3, int num4)
 //  Problem :10
 // Sorting Vector
 
+// int main()
+// {
+//     vector<int> num;
+//     int n, val;
+//     cin >> n;
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> val;
+//         num.push_back(val);
+//     }
+//     sort(num.begin(), num.end());
+
+//     for (int i : num)
+//         cout << i << " ";
+
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// dev skill Problem
+
+// int main()
+// {
+//     int val, h;
+//     int arr[4];
+//     for (int i = 0; i < 4; i++)
+//     {
+//         cin >> val;
+//         arr[i] = val;
+//     }
+//     cin >> h;
+//     int min = arr[0];
+//     for (int i = 0; i < 4; i++)
+//     {
+//         if (min > arr[i])
+//             min = arr[i];
+//     }
+//     int total = 0;
+//     for (int i : arr)
+//     {
+//         if (i == min)
+//             continue;
+//         total = total + i;
+//     }
+//     (total > h) ? cout << "WAW" << endl : cout << "AWW" << endl;
+
+//     return 0;
+// }
+
+// Problem 2 :Devskill
 int main()
 {
-    vector<int> num;
-    int n, val;
+    int n;
+    string name;
     cin >> n;
+    string arr[n];
     for (int i = 0; i < n; i++)
     {
-        cin >> val;
-        num.push_back(val);
-    }
-    sort(num.begin(), num.end());
+        cin >> name;
+        for (int i = 0; i < name.size(); i++)
+        {
+            cout << (((64 < int(name[i])) && (int(name[i]) < 91)) || ((97 < int(name[i])) && (int(name[i]) < 122))) << endl;
+            // if (((64 < int(name[i])) && (int(name[i]) < 91)) || ((97 < int(name[i])) && (int(name[i]) < 122)) || ((47 < int(name[i])) && (int(name[i]) < 58)) || i == '_')
+            // {
 
-    for (int i : num)
-        cout << i << " ";
+            //     arr[i] = name;
+            // }
+            // else
+            // {
+            //     cout << "Each username will contain only uppercase letters, lowercase letters, digits, and underscore (\"_\") characters."
+            //          << endl;
+            //     break;
+            // }
+        }
+    }
+    for (string i : arr)
+    {
+
+        cout << i << ':' << " "
+             << "F" << endl;
+    }
 
     return 0;
 }
