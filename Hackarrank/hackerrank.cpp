@@ -6,6 +6,85 @@
 #include <algorithm>
 using namespace std;
 
+int main()
+{
+    int numDays = 669; // number of days in a year on Mars
+    double p = 1.0;    // probability that no two people have the same birthday
+    int n = 0;         // number of people at the party
+
+    // Keep increasing the number of people at the party until the probability
+    // that at least two people have the same birthday is at least 0.5
+    while (1 - p >= 0.5)
+    {
+        p *= (double)(numDays - n) / numDays;
+        n++;
+    }
+
+    cout << "Minimum number of people: " << n << endl;
+
+    return 0;
+}
+
+// int main()
+// {
+//     int val, h;
+//     int arr[4];
+//     for (int i = 0; i < 4; i++)
+//     {
+//         cin >> val;
+//         arr[i] = val;
+//     }
+//     cin >> h;
+//     int min = arr[0];
+//     for (int i = 0; i < 4; i++)
+//     {
+//         if (min > arr[i])
+//             min = arr[i];
+//     }
+//     int total = 0;
+//     for (int i : arr)
+//     {
+//         if (i == min)
+//             continue;
+//         total = total + i;
+//     }
+//     (total > h) ? cout << "WAW" << endl : cout << "AWW" << endl;
+
+//     return 0;
+// }
+
+// Problem 2 :Devskill
+// int main()
+// {
+//     int n;
+//     string name;
+//     cin >> n;
+//     string arr[n];
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> name;
+//         for (int j = 0; j < name.size(); j++)
+//         {
+//             if (((64 < int(name[j])) && (int(name[j]) < 91)) || ((96 < int(name[j])) && (int(name[j]) < 123)) || ((47 < int(name[j])) && (int(name[j]) < 58)) || name[j] == '_')
+//                 arr[i] = name;
+//             else
+//             {
+//                 cout << "Each username will contain only uppercase letters, lowercase letters, digits, and underscore (\"_\") characters."
+//                      << endl;
+//                 break;
+//             }
+//         }
+//     }
+//     for (string i : arr)
+//     {
+
+//         cout << i << ':' << " "
+//              << "F" << endl;
+//     }
+
+//     return 0;
+// }
+
 /////// Problem 1 : C++ data type  (https://www.hackerrank.com/challenges/c-tutorial-basic-data-types/problem?isFullScreen=true)
 
 // int main()
@@ -276,69 +355,3 @@ int max_of_four(int num1, int num2, int num3, int num4)
 
 // #include <iostream>
 // using namespace std;
-
-// dev skill Problem
-
-// int main()
-// {
-//     int val, h;
-//     int arr[4];
-//     for (int i = 0; i < 4; i++)
-//     {
-//         cin >> val;
-//         arr[i] = val;
-//     }
-//     cin >> h;
-//     int min = arr[0];
-//     for (int i = 0; i < 4; i++)
-//     {
-//         if (min > arr[i])
-//             min = arr[i];
-//     }
-//     int total = 0;
-//     for (int i : arr)
-//     {
-//         if (i == min)
-//             continue;
-//         total = total + i;
-//     }
-//     (total > h) ? cout << "WAW" << endl : cout << "AWW" << endl;
-
-//     return 0;
-// }
-
-// Problem 2 :Devskill
-int main()
-{
-    int n;
-    string name;
-    cin >> n;
-    string arr[n];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> name;
-        for (int i = 0; i < name.size(); i++)
-        {
-            cout << (((64 < int(name[i])) && (int(name[i]) < 91)) || ((97 < int(name[i])) && (int(name[i]) < 122))) << endl;
-            // if (((64 < int(name[i])) && (int(name[i]) < 91)) || ((97 < int(name[i])) && (int(name[i]) < 122)) || ((47 < int(name[i])) && (int(name[i]) < 58)) || i == '_')
-            // {
-
-            //     arr[i] = name;
-            // }
-            // else
-            // {
-            //     cout << "Each username will contain only uppercase letters, lowercase letters, digits, and underscore (\"_\") characters."
-            //          << endl;
-            //     break;
-            // }
-        }
-    }
-    for (string i : arr)
-    {
-
-        cout << i << ':' << " "
-             << "F" << endl;
-    }
-
-    return 0;
-}

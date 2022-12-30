@@ -192,25 +192,133 @@ void vector_T()
 
 // HackerRank Vector Problem
 
-int main()
-{
-    vector<int> arr;
-    int n, val, posiRemove, start, end;
-    cin >> n;
+// int main()
+// {
+//     vector<int> arr;
+//     int n, val, posiRemove, start, end;
+//     cin >> n;
 
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> val;
+//         arr.push_back(val);
+//     }
+
+//     cin >> posiRemove >> start >> end;
+//     arr.erase(arr.begin() + (posiRemove - 1));
+//     arr.erase(arr.begin() + --start, arr.begin() + --end);
+
+//     cout << arr.size() << endl;
+
+//     for (int i = 0; i < arr.size(); i++)
+//         cout << arr[i] << " ";
+//     return 0;
+// }
+
+// 👉👉👉👉👉👉 Nesting
+
+//  Vector of Pairs
+
+void printVecOfPair(vector<pair<int, int>> &v)
+{
+    cout << "size: " << v.size() << endl;
+
+    for (int i = 0; i < v.size(); ++i)
+    {
+        cout << v[i].first << " " << v[i].second << " ";
+        cout << endl;
+    }
+}
+
+void vecOfPair()
+{
+    // vector<pair<int, int>> v = {{1, 2}, {2, 3}, {3, 4}};
+
+    vector<pair<int, int>> v;
+    int n;
+    cin >> n;
     for (int i = 0; i < n; i++)
     {
-        cin >> val;
-        arr.push_back(val);
+        int x, y;
+        cin >> x >> y;
+        // v.push_back({x, y});
+        v.push_back(make_pair(x, y));
     }
 
-    cin >> posiRemove >> start >> end;
-    arr.erase(arr.begin() + (posiRemove - 1));
-    arr.erase(arr.begin() + --start, arr.begin() + --end);
+    // 📝📝📝 It can be useful for swaping
 
-    cout << arr.size() << endl;
+    printVecOfPair(v);
+}
 
-    for (int i = 0; i < arr.size(); i++)
-        cout << arr[i] << " ";
+// /// Array of Vectors
+
+void arrOfVector()
+{
+    // vector<int> v[10]; // ot create 10 vector which sizes are 0;
+    // when we need to get many vector as an input we can use this approach
+    int N;
+    cin >> N;
+    vector<int> a[N];
+    for (int i = 0; i < N; i++)
+    {
+        int n;
+        cin >> n;
+        for (int j = 0; j < n; j++)
+        {
+            int vel;
+            cin >> vel;
+            a[i].push_back(vel);
+        }
+    }
+
+    for (int i = 0; i < N; i++)
+    {
+        cout << "size: " << a[i].size() << endl;
+        for (int j = 0; j < a[i].size(); j++)
+        {
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+// Explaination: It's behave like 2D vector. where number of row is fixed but the number of coloum is dynamic
+
+/////// Now Vector of Vectors where the number of row and column are dynamic
+void vecOfVector()
+{
+    vector<vector<int>> v;
+    int N;
+    cin >> N;
+    for (int i = 0; i < N; i++)
+    {
+        int n;
+        cin >> n;
+        vector<int> temp;
+        for (int j = 0; i < n; j++)
+        {
+            int x;
+            cin >> x;
+            temp.push_back(x);
+        }
+        v.push_back(temp);
+    }
+
+    //  Print the element
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << "size: " << v[i].size() << endl;
+        for (int j = 0; j < v[i].size(); j++)
+        {
+            cout << v[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    // vecOfPair();
+    arrOfVector();
     return 0;
 }
