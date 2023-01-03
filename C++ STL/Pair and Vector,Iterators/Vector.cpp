@@ -1,7 +1,9 @@
+#include <bits/stdc++.h>
 #include <iostream>
-// #include <string>
-// #include <utility>
+#include <string>
+#include <utility>
 #include <vector>
+// #include <cmath>
 
 using namespace std;
 
@@ -316,9 +318,129 @@ void vecOfVector()
     }
 }
 
+// ////////////////👉👉👉👉👉👉👉👉👉 Pointer
+
+void Pointer()
+{
+    // cout << "I am from pointer" << endl;
+    vector<int> v;
+    for (int i = 1; i < 6; i++)
+        v.push_back(i);
+
+    //  basic decalration of iterator and access the element of a container
+    vector<int>::iterator it; // if we use auto keyword in the for loop the we don't need to write this line
+    for (it = v.begin(); it != v.end(); ++it)
+        cout << *it << " ";
+    cout << endl;
+    // Range base for loop
+    cout << "Range Base For loop" << endl;
+    for (int value : v)
+    {
+        // value++; it will not increase the actual value of the vector element
+        //  but if we use &value then it will work
+        cout << value << " ";
+    }
+}
+
+// //// 👉👉👉👉👉👉👉 Map ///////////////
+void Map()
+{
+    map<int, string> m;
+    m[1] = "Nasim";
+    m[3] = "Leon";
+    m[2] = "Reja";
+    m.insert({4, "Babu"});
+    //  value accessing of map
+    for (auto it = m.begin(); it != m.end(); ++it)
+    {
+        cout << (*it).first << " " << (*it).second << endl;
+    }
+    // // basic function of map
+
+    auto it = m.find(4); // if the key doesn't exist then it will be the end() iterator
+    cout << (*it).first << " " << (*it).second << endl;
+    if (it != m.end())
+        m.erase(it); // it will remove the the value of the given iterator
+}
+
+// /// simple question about map
+/*
+Given N strins, print unique strings in lexiographical order
+with their frequency
+N<=10^5
+|s|<=100
+*/
+void mapQuestion()
+{
+    int n;
+    cin >> n;
+    map<string, int> m;
+    for (int i = 0; i < n; ++i)
+    {
+        string s;
+        cin >> s;
+        m[s] = m[s] + 1;
+    }
+    for (auto it = m.begin(); it != m.end(); ++it)
+    {
+        cout << (*it).first << " " << (*it).second << endl;
+    }
+}
+
+// int main()
+// {
+//     // vecOfPair();
+//     // arrOfVector();
+//     // Pointer();
+//     // Map();
+//     mapQuestion();
+//     return 0;
+// }
+
+// /// Hacker rank map problem's solution
+
+// int main()
+// {
+//     int n, type;
+//     map<string, int> m;
+//     string name;
+//     cin >> n;
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> type >> name;
+//         if (type == 1)
+//         {
+//             int marks;
+//             cin >> marks;
+//             m[name] = m[name] + marks;
+//         }
+//         else if (type == 2)
+//             m.erase(name);
+//         else if (type == 3)
+//             cout << m[name] << endl;
+//     }
+//     return 0;
+// }
+
+// /// Hackerrank Pointer Problem
+using namespace std;
+
+void update(int *a, int *b)
+{
+    int temp = *a + *b;
+    *b = abs(*a - *b);
+    *a = temp;
+}
+
 int main()
 {
-    // vecOfPair();
-    arrOfVector();
+    int a, b;
+    cin >> a >> b;
+    int *pa = &a, *pb = &b;
+
+    update(pa, pb);
+    cout << a << "\n"
+         << b;
+
     return 0;
 }
