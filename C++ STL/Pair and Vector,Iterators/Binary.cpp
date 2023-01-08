@@ -8,54 +8,150 @@
 
 using namespace std;
 
-// //////// 👉👉👉👉👉👉👉 Points in Segments
-
+// Sum Of Cubes
 int main()
 {
-    int t;
-    cin >> t;
-    vector<vector<int>> v;
-    vector<vector<pair<int, int>>> vp;
+    using std::cout;
+    using std::endl;
 
-    for (int i = 0; i < t; i++)
+    int n;
+    cin >> n;
+    int crt = ceil(cbrt(n));
+    vector<int> v;
+    for (int i = 0; i < crt; i++)
     {
-        int p, s;
-        cin >> p >> s;
-        vector<int> temp;
-        for (int j = 0; j < p; j++)
-        {
-            int n;
-            cin >> n;
-            temp.push_back(n);
-        }
-        v.push_back(temp);
-
-        vector<pair<int, int>> tempV;
-        for (int j = 0; j < s; j++)
-        {
-            int s1, s2;
-            cin >> s1 >> s2;
-            tempV.push_back({s1, s2});
-        }
-        vp.push_back(tempV);
+        v.push_back(i + 1);
     }
 
+    string str = "NO";
     for (int i = 0; i < v.size(); i++)
     {
-        cout << "Case " << i + 1 << ": " << endl;
-        for (int j = 0; j < vp[i].size(); j++)
+        auto root = cbrt(n - (v[i] * v[i] * v[i]));
+        if (root == ceil(root))
         {
-            auto lbOfHigh = upper_bound(v[i].begin(), v[i].end(), vp[i][j].second);
-
-            auto lbOfLow = lower_bound(v[i].begin(), v[i].end(), vp[i][j].first);
-
-            int result = (lbOfHigh - v[i].begin()) - (lbOfLow - v[i].begin());
-            cout << result << endl;
+            str = "YES";
+            break;
         }
     }
-
+    cout << str << endl;
     return 0;
 }
+
+// int upperBound(vector<int> &v, int num)
+// {
+//     int lo = 0, hi = v.size() - 1, mid;
+//     while (hi - lo > 1)
+//     {
+//         int mid = (hi + lo) / 2;
+//         if (v[mid] <= num)
+//             lo = mid;
+//         else
+//             hi = mid;
+//     }
+
+//     if (v[lo] > num)
+//         return lo;
+//     else if (v[hi] > num)
+//         return hi;
+//     else
+//         return -1;
+// }
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     vector<int> v;
+//     for (int i = 0; i < n; i++)
+//     {
+//         int el;
+//         cin >> el;
+//         v.push_back(el);
+//     }
+//     int to_find;
+//     cin >> to_find;
+//     int result = upperBound(v, to_find);
+//     cout << "The Upper Bound of " << to_find << " is : " << v[result] << endl;
+//     return 0;
+// }
+// //  sqrtroot of int
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     vector<int> v;
+//     for (int i = 0; i < n; i++)
+//     {
+//         v.push_back(i);
+//     }
+//     int lo = 0, hi = n - 1;
+//     int mid;
+//     while (hi - lo > 1)
+//     {
+//         int mid = (hi + lo) / 2;
+//         if (mid * mid < n)
+//             lo = mid + 1;
+//         else
+//             hi = mid;
+//     }
+//     if (lo * lo == n)
+//         cout << "The sqrt root value of " << n << " is : " << lo;
+//     else if (hi * hi == n)
+//         cout << "The sqrt root value of " << n << " is : " << hi;
+//     else
+//         cout << "Can't find";
+//     return 0;
+// }
+
+// //////// 👉👉👉👉👉👉👉 Points in Segments
+
+// int main()
+// {
+//     int t;
+//     cin >> t;
+//     vector<vector<int>> v;
+//     vector<vector<pair<int, int>>> vp;
+
+//     for (int i = 0; i < t; i++)
+//     {
+//         int p, s;
+//         cin >> p >> s;
+//         vector<int> temp;
+//         for (int j = 0; j < p; j++)
+//         {
+//             int n;
+//             cin >> n;
+//             temp.push_back(n);
+//         }
+//         v.push_back(temp);
+
+//         vector<pair<int, int>> tempV;
+//         for (int j = 0; j < s; j++)
+//         {
+//             int s1, s2;
+//             cin >> s1 >> s2;
+//             tempV.push_back({s1, s2});
+//         }
+//         vp.push_back(tempV);
+//     }
+
+//     for (int i = 0; i < v.size(); i++)
+//     {
+//         cout << "Case " << i + 1 << ": " << endl;
+//         for (int j = 0; j < vp[i].size(); j++)
+//         {
+//             auto lbOfHigh = upper_bound(v[i].begin(), v[i].end(), vp[i][j].second);
+
+//             auto lbOfLow = lower_bound(v[i].begin(), v[i].end(), vp[i][j].first);
+
+//             int result = (lbOfHigh - v[i].begin()) - (lbOfLow - v[i].begin());
+//             cout << result << endl;
+//         }
+//     }
+
+//     return 0;
+// }
 
 // //////// 👉👉👉👉👉👉👉 The Playboy Chimp
 // int main()
