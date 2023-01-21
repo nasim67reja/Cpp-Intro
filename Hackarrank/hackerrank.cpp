@@ -1,29 +1,116 @@
+// #include <string>
+// #include <cmath>
+// #include <cstdio>
+// #include <algorithm>
 #include <iostream>
-#include <string>
-#include <cmath>
-#include <cstdio>
 #include <vector>
-#include <algorithm>
+#include <unordered_map>
 using namespace std;
 
+// vjudge hstu problem
+// unordered map
 int main()
 {
-    int numDays = 669; // number of days in a year on Mars
-    double p = 1.0;    // probability that no two people have the same birthday
-    int n = 0;         // number of people at the party
-
-    // Keep increasing the number of people at the party until the probability
-    // that at least two people have the same birthday is at least 0.5
-    while (1 - p >= 0.5)
+    unordered_map<int, int> umap;
+    int x;
+    while (cin >> x)
     {
-        p *= (double)(numDays - n) / numDays;
-        n++;
+        cout << x << " ";
     }
-
-    cout << "Minimum number of people: " << n << endl;
-
     return 0;
 }
+
+// int main()
+// {
+//     int n, q;
+//     cin >> n >> q;
+//     vector<vector<int>> v(n);
+
+//     for (int i = 0; i < q; i++)
+//     {
+//         int c, t;
+//         cin >> c >> t;
+//         if (c == 0)
+//         {
+//             int num;
+//             cin >> num;
+//             v[t].push_back(num);
+//         }
+//         else if (c == 1)
+//         {
+
+//             for (int num : v[t])
+//                 cout << num << " ";
+//             cout << endl;
+//         }
+//         else if (c == 2)
+//             v[t].clear();
+//     }
+
+//     return 0;
+// }
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     int arr[n];
+//     // while (n--)
+//     for (int i = 0; i < n; i++)
+//     {
+//         int a;
+//         cin >> a;
+//         arr[i] = a;
+//     }
+//     for (int val : arr)
+//         cout << val << " ";
+//     return 0;
+// }
+
+// int main()
+// {
+//     vector<int> arr;
+//     int n, val, posiRemove, start, end;
+//     cin >> n;
+
+//     while (n--)
+//     {
+//         cin >> val;
+//         arr.push_back(val);
+//     }
+
+//     cin >> posiRemove >> start >> end;
+//     arr.erase(arr.begin() + (posiRemove - 1));
+//     arr.erase(arr.begin() + --start, arr.begin() + --end);
+
+//     cout << arr.size() << endl;
+
+//     for (int i = 0; i < arr.size(); i++)
+//         cout << arr[i] << " ";
+//     return 0;
+// }
+
+//  Problem :10
+// Sorting Vector
+
+// int main()
+// {
+//     int numDays = 669; // number of days in a year on Mars
+//     double p = 1.0;    // probability that no two people have the same birthday
+//     int n = 0;         // number of people at the party
+
+//     // Keep increasing the number of people at the party until the probability
+//     // that at least two people have the same birthday is at least 0.5
+//     while (1 - p >= 0.5)
+//     {
+//         p *= (double)(numDays - n) / numDays;
+//         n++;
+//     }
+
+//     cout << "Minimum number of people: " << n << endl;
+
+//     return 0;
+// }
 
 // int main()
 // {
@@ -355,3 +442,81 @@ int max_of_four(int num1, int num2, int num3, int num4)
 
 // #include <iostream>
 // using namespace std;
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     vector<int> v;
+//     while (n--)
+//     {
+//         int a;
+//         cin >> a;
+//         if (a == 0)
+//         {
+//             int b;
+//             cin >> b;
+//             v.push_back(b);
+//         }
+//         else if (a == 1)
+//         {
+//             int ra;
+//             cin >> ra;
+//             cout << v[ra] << endl;
+//         }
+//         else if (a == 2)
+//             v.pop_back();
+//     }
+
+//     return 0;
+// }
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+
+//     set<int> s;
+
+//     while (n--)
+//     {
+//         int a, b;
+//         cin >> a >> b;
+//         if (a == 1)
+//             s.insert(b);
+//         else if (a == 2)
+//             s.erase(b);
+//         else if (a == 3)
+//         {
+//             set<int>::iterator itr = s.find(b);
+//             if (itr != s.end())
+//             {
+//                 cout << "Yes" << endl;
+//             }
+//             else
+//             {
+//                 cout << "No" << endl;
+//             }
+//         }
+//     }
+
+//     return 0;
+// }
+
+// for (int i = 0; i < n; i++)
+// {
+//     int y, x;
+//     cin >> y >> x;
+//     if (y == 1)
+//         s.insert(x);
+//     else if (y == 2)
+//         s.erase(x);
+//     else if (y == 3)
+//     {
+//         auto itr = s.find(x);
+//         if (itr != s.end())
+//             cout << "Yes" << endl;
+//         else
+//             cout << "No" << endl;
+//     }
+// }
